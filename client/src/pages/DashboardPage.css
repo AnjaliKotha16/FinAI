@@ -1,0 +1,543 @@
+/* Dashboard Main Layout Container */
+.dashboard-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+/* Header & Period Selector Wrapper */
+.dashboard-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.period-selector-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.5rem 0.35rem 0.85rem;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.period-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.period-pills {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.period-pill {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.period-pill:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+}
+
+.period-pill.active {
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+}
+
+.period-pill:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Error Banner */
+.dashboard-error-banner {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error-icon {
+  font-size: 1.75rem;
+}
+
+.error-text h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  color: #fca5a5;
+  font-weight: 700;
+}
+
+.error-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.btn-retry {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-retry:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+/* Skeleton Loading State */
+.dashboard-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.skeleton-card {
+  height: 110px;
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.4) 25%, rgba(51, 65, 85, 0.4) 50%, rgba(30, 41, 59, 0.4) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite;
+  border-radius: 16px;
+}
+
+.skeleton-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.skeleton-chart {
+  height: 280px;
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.4) 25%, rgba(51, 65, 85, 0.4) 50%, rgba(30, 41, 59, 0.4) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite;
+  border-radius: 16px;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Summary Cards Grid */
+.summary-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Dashboard Charts Grid */
+.dashboard-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* Dashboard Goals & Budget Overview Section */
+.dashboard-goals-overview-card,
+.dashboard-budget-overview-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dash-budget-empty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.btn-dash-create-budget {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-dash-create-budget:hover {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+.dash-budget-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.dash-budget-item {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.dash-budget-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.dash-budget-name {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #f8fafc;
+}
+
+.dash-budget-icon {
+  font-size: 1.1rem;
+}
+
+.dash-budget-amounts {
+  font-family: monospace;
+  font-weight: 600;
+  color: #cbd5e1;
+  font-size: 0.825rem;
+}
+
+.dash-budget-amounts.exceeded {
+  color: #f87171;
+}
+
+.dash-budget-track {
+  height: 6px;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.dash-budget-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.dash-budget-fill.good {
+  background: #34d399;
+}
+
+.dash-budget-fill.near {
+  background: #fbbf24;
+}
+
+.dash-budget-fill.exceeded {
+  background: #f87171;
+}
+
+/* Recent Transactions Card Section */
+.recent-transactions-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.recent-transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.recent-transactions-header .title-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.recent-transactions-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.recent-badge {
+  font-size: 0.725rem;
+  background: rgba(148, 163, 184, 0.12);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.btn-view-all {
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.btn-view-all:hover {
+  color: #7dd3fc;
+  text-decoration: underline;
+}
+
+/* Table Responsive Container */
+.recent-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.recent-transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.recent-transactions-table th {
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.recent-transactions-table td {
+  padding: 0.9rem 1rem;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.recent-transactions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.recent-transactions-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tx-desc-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.tx-desc {
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.tx-payment-method {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.type-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.type-tag.income {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.type-tag.expense {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.tx-date-cell {
+  color: #94a3b8;
+  font-size: 0.825rem;
+  white-space: nowrap;
+}
+
+.tx-amount-cell {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.tx-amount-cell.income {
+  color: #34d399;
+}
+
+.tx-amount-cell.expense {
+  color: #f87171;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Empty State Styling */
+.dashboard-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  gap: 0.85rem;
+}
+
+.dashboard-empty-state .empty-icon {
+  font-size: 2.5rem;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.85rem;
+  border-radius: 50%;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-empty-state h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.dashboard-empty-state p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+.btn-add-transaction {
+  margin-top: 0.5rem;
+  background: #38bdf8;
+  color: #0f172a;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  display: inline-block;
+}
+
+.btn-add-transaction:hover {
+  background: #7dd3fc;
+  transform: translateY(-1px);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .dashboard-charts-grid {
+    grid-template-columns: 1fr;
+  }
+  .skeleton-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .period-selector-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .period-pills {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .period-pill {
+    flex: 1;
+    padding: 0.4rem 0.25rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .recent-transactions-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-view-all {
+    align-self: flex-end;
+  }
+}

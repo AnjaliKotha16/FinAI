@@ -1,0 +1,20 @@
+.app-footer {
+  background: rgba(15, 23, 42, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 2rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.footer-sub {
+  font-size: 0.75rem;
+  color: #475569;
+  margin-top: 0.25rem;
+}

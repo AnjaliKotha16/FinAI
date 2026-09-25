@@ -1,0 +1,422 @@
+.health-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+/* Header & Period Selector */
+.health-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.health-period-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.5rem 0.35rem 0.85rem;
+  border-radius: 12px;
+}
+
+.period-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.period-pills {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.period-pill {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.period-pill:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+}
+
+.period-pill.active {
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Savings Rate Custom Card */
+.savings-rate-card {
+  background: rgba(30, 41, 59, 0.6);
+  border-left: 4px solid #c084fc !important;
+}
+
+.card-amount.savings-rate {
+  color: #c084fc;
+}
+
+/* Details Grid */
+.health-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.35rem;
+}
+
+.health-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.health-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.health-card-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.health-card-header .title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.sub-link {
+  font-size: 0.8rem;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sub-link:hover {
+  text-decoration: underline;
+}
+
+.info-tag {
+  font-size: 0.7rem;
+  background: rgba(148, 163, 184, 0.1);
+  color: #94a3b8;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.health-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.detail-row.highlight-box {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+}
+
+.detail-label {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.detail-val {
+  font-family: monospace;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.detail-val.spent {
+  color: #f87171;
+}
+
+.detail-val.income {
+  color: #34d399;
+}
+
+.trend-badge {
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+.trend-badge.increased {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+.trend-badge.decreased {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+.trend-badge.stable {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+
+.budget-status-counts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.status-box.green {
+  border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.status-box.yellow {
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.status-box.red {
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.status-num {
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.status-box.green .status-num {
+  color: #34d399;
+}
+
+.status-box.yellow .status-num {
+  color: #fbbf24;
+}
+
+.status-box.red .status-num {
+  color: #f87171;
+}
+
+.status-lbl {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.progress-bar-bg {
+  height: 6px;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-bar-fill.green {
+  background: #34d399;
+}
+
+.progress-bar-fill.yellow {
+  background: #fbbf24;
+}
+
+.progress-bar-fill.red {
+  background: #f87171;
+}
+
+/* Empty State */
+.health-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  gap: 1rem;
+}
+
+.health-empty-state .empty-icon {
+  font-size: 3rem;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.health-empty-state h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.health-empty-state p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+.btn-empty-action {
+  margin-top: 0.5rem;
+  background: #38bdf8;
+  color: #0f172a;
+  padding: 0.65rem 1.35rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-empty-action:hover {
+  background: #7dd3fc;
+  transform: translateY(-1px);
+}
+
+/* Error Banner */
+.health-error-banner {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.health-error-banner .error-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.health-error-banner h4 {
+  margin: 0 0 0.25rem 0;
+  color: #fca5a5;
+  font-size: 0.95rem;
+}
+
+.health-error-banner p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.btn-retry {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Skeleton Loading */
+.health-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.skeleton-card {
+  height: 110px;
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.4) 25%, rgba(51, 65, 85, 0.4) 50%, rgba(30, 41, 59, 0.4) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite;
+  border-radius: 16px;
+}
+
+.skeleton-score-box {
+  height: 220px;
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.4) 25%, rgba(51, 65, 85, 0.4) 50%, rgba(30, 41, 59, 0.4) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite;
+  border-radius: 16px;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .health-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .health-period-selector {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .period-pills {
+    width: 100%;
+  }
+
+  .period-pill {
+    flex: 1;
+    text-align: center;
+    padding: 0.4rem 0.2rem;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,87 @@
+.budget-summary-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.summary-stat-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.summary-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.summary-stat-card.active-budgets {
+  border-left: 4px solid #38bdf8;
+}
+
+.summary-stat-card.total-budgeted {
+  border-left: 4px solid #818cf8;
+}
+
+.summary-stat-card.total-spent {
+  border-left: 4px solid #fbbf24;
+}
+
+.summary-stat-card.total-remaining {
+  border-left: 4px solid #34d399;
+}
+
+.summary-stat-card.total-remaining.exceeded {
+  border-left: 4px solid #f87171;
+}
+
+.stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-icon {
+  font-size: 1.25rem;
+  background: rgba(15, 23, 42, 0.5);
+  padding: 0.35rem;
+  border-radius: 8px;
+}
+
+.stat-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  font-family: monospace;
+  color: #f8fafc;
+}
+
+.stat-value.spent-color {
+  color: #fbbf24;
+}
+
+.stat-value.positive {
+  color: #34d399;
+}
+
+.stat-value.negative {
+  color: #f87171;
+}
+
+.stat-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+}

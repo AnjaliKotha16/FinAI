@@ -1,0 +1,291 @@
+.review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header & Controls Bar */
+.review-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-radius: 16px;
+  padding: 16px 24px;
+}
+
+.month-selector-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.month-select-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted, #94a3b8);
+}
+
+.month-select-dropdown {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+  color: var(--text-primary, #f8fafc);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.month-select-dropdown:focus {
+  border-color: #6366f1;
+}
+
+.print-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+  color: var(--text-primary, #f8fafc);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.print-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Metric Cards Grid */
+.review-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.review-stat-card {
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted, #94a3b8);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.stat-value-large {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary, #f8fafc);
+}
+
+.stat-value-large.positive { color: #10b981; }
+.stat-value-large.negative { color: #ef4444; }
+
+.stat-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted, #94a3b8);
+}
+
+/* AI Executive Summary Box */
+.review-section-box {
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-box-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary, #f8fafc);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.ai-summary-bubble {
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--text-primary, #f1f5f9);
+  white-space: pre-wrap;
+}
+
+.highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.highlight-item {
+  font-size: 0.92rem;
+  color: var(--text-primary, #e2e8f0);
+  line-height: 1.5;
+}
+
+/* Category Breakdown List & Table */
+.breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.breakdown-table th,
+.breakdown-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.9rem;
+}
+
+.breakdown-table th {
+  color: var(--text-muted, #94a3b8);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.mom-tag {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mom-tag.increased { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
+.mom-tag.decreased { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; }
+.mom-tag.neutral { background: rgba(255, 255, 255, 0.08); color: var(--text-muted); }
+
+/* MoM Comparison Grid */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.comparison-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comp-title {
+  font-size: 0.82rem;
+  color: var(--text-muted, #94a3b8);
+}
+
+.comp-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary, #f8fafc);
+}
+
+/* Goal Progress Grid */
+.goals-review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.goal-review-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.goal-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.goal-progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.goal-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1 0%, #10b981 100%);
+  border-radius: 4px;
+}
+
+/* Printable CSS Rules */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .print-btn,
+  .month-selector-group select {
+    display: none !important;
+  }
+
+  .review-container {
+    max-width: 100% !important;
+  }
+
+  .review-section-box,
+  .review-stat-card,
+  .review-controls-bar {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #cccccc !important;
+    box-shadow: none !important;
+  }
+
+  .stat-value-large,
+  .section-box-title,
+  .goal-title-row {
+    color: #000000 !important;
+  }
+
+  .ai-summary-bubble {
+    background: #f8fafc !important;
+    color: #000000 !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+}

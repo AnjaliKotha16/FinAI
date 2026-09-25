@@ -1,0 +1,33 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.app-shell-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 260px;
+  min-width: 0; /* Prevents flexbox overflow */
+  transition: margin-left 0.3s ease;
+}
+
+.app-main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .app-shell-main {
+    margin-left: 0;
+  }
+
+  .app-main-content {
+    padding: 1.25rem;
+  }
+}

@@ -1,0 +1,223 @@
+.budget-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.budget-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.budget-card.on-track {
+  border-top: 3px solid #34d399;
+}
+
+.budget-card.near-limit {
+  border-top: 3px solid #fbbf24;
+}
+
+.budget-card.exceeded {
+  border-top: 3px solid #f87171;
+}
+
+.budget-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.category-icon-box {
+  font-size: 1.5rem;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 0.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-title-group h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.period-badge {
+  font-size: 0.7rem;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.budget-actions {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.btn-action {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.budget-date-range {
+  font-size: 0.775rem;
+  color: #94a3b8;
+}
+
+/* Progress Bar */
+.budget-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.progress-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.progress-used-text {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.status-pill {
+  font-size: 0.725rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pill.on-track {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.status-pill.near-limit {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.status-pill.exceeded {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.progress-track {
+  height: 8px;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progress-fill.on-track {
+  background: linear-gradient(90deg, #34d399, #10b981);
+}
+
+.progress-fill.near-limit {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
+
+.progress-fill.exceeded {
+  background: linear-gradient(90deg, #f87171, #ef4444);
+}
+
+/* Metrics Grid */
+.budget-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.metric-val {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #f8fafc;
+}
+
+.metric-val.spent {
+  color: #fbbf24;
+}
+
+.metric-val.remaining {
+  color: #34d399;
+}
+
+.metric-val.exceeded {
+  color: #f87171;
+}
+
+/* Over budget alert banner */
+.over-budget-banner {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  color: #fca5a5;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+.budget-notes {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-style: italic;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.5rem;
+}
